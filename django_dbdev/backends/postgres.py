@@ -145,7 +145,7 @@ class PostgresBackend(BaseDbdevBackend):
         if dumpfile.endswith('.dump'):
             print(self.pg_restore(dumpfile))
         else:
-            self.psql(self.dbsettings['NAME'], f=dumpfile)
+            self.psql(self.dbsettings['NAME'], f=dumpfile, h="localhost")
 
     def create_dbdump(self, dumpfile):
         #args = ['-f', dumpfile, '-a', '--column-inserts']
